@@ -6,6 +6,7 @@ see LICENSE.txt
 
 ##Crafting
 Wood barrel:
+
 | W |   | W |
 |---|---|---|
 | W |   | W |
