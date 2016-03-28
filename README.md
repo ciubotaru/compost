@@ -1,10 +1,10 @@
-##compost mod
+#compost mod
 With this mod, you are able to compost grass, leaves, flowers...
 
-#License
+##License
 see LICENSE.txt
 
-#Crafting
+##Crafting
 Wood barrel:
 	W		W
 	W		W
@@ -13,8 +13,8 @@ Wood barrel:
 	W : wood
 	S : wood slab
 
-#Bugs
+##Bugs
 Report bugs on the forum topic or open a issue on GitHub.
 
-#created by
+##created by
 cd2 (cdqwertz) - cdqwertz.github.io
