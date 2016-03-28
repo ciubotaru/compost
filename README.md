@@ -6,11 +6,10 @@ see LICENSE.txt
 
 ##Crafting
 Wood barrel:
-	|W	|	|W
-	|-------|-------|
-	|W	|	|W
-	|-------|-------|
-	|W	|S	|W
+	| W |   | W |
+	|---|---|---|
+	| W |   | W |
+	| W | S | W |
 
 	W : wood
 	S : wood slab
