@@ -5,18 +5,34 @@ function compost.register_item(name)
 	compost.items[name] = true
 end
 
+-- grass
 compost.register_item("default:grass_1")
 compost.register_item("default:junglegrass")
+
+-- leaves
 compost.register_item("default:leaves")
 compost.register_item("default:jungleleaves")
 compost.register_item("default:pine_needles")
+compost.register_item("default:acacia_leaves")
+compost.register_item("default:aspen_leaves")
+
+-- dirt
 compost.register_item("default:dirt")
 compost.register_item("default:dirt_with_grass")
+
+-- stick
 compost.register_item("default:stick")
 
+-- flowers
 compost.register_item("flowers:geranium")
 compost.register_item("flowers:tulip")
 compost.register_item("flowers:rose")
+compost.register_item("flowers:dandelion_yellow")
+compost.register_item("flowers:dandelion_white")
+
+-- food
+compost.register_item("farming:bread")
+compost.register_item("farming:wheat")
 
 minetest.register_node("compost:wood_barrel", {
 	description = "Wood Barrel",
