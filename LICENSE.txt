@@ -1,7 +1,8 @@
 License for Code
 ----------------
 
-Copyright (C) 2016 cd2 (cdqwertz) <cdqwertz@gmail.com>
+Original Work Copyright (C) 2016 cd2 (cdqwertz) <cdqwertz@gmail.com>
+Modified Work Copyright (C) Vitalie Ciubotaru <vitalie at ciubotaru dot tk>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
