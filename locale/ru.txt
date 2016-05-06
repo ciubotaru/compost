@@ -1,3 +1,5 @@
+Compost Bin = Компостный ящик
+Empty Compost Bin = Пустой компостный ящик
 To start composting, place some organic matter inside. = Чтобы начать компостирование, добавьте органику внутрь
 progress: 0% = прогресс: 0%
 progress: @1% = прогресс: @1%

@@ -9,6 +9,7 @@ compost_version = '0.0.1'
 
 local i18n --internationalization
 	if minetest.get_modpath("intllib") then
+minetest.log('action', 'intllib loaded')
 		i18n = intllib.Getter()
 	else
 		i18n = function(s,a,...)
@@ -258,7 +259,7 @@ local function on_punch(pos, node, player, pointed_thing)
 end
 
 minetest.register_node("compost:wood_barrel_empty", {
-	description = "Empty Compost Bin",
+	description = i18n('Empty Compost Bin'),
 	tiles = {
 		"default_wood.png",
 	},
@@ -291,7 +292,7 @@ minetest.register_node("compost:wood_barrel_empty", {
 })
 
 minetest.register_node("compost:wood_barrel", {
-	description = "Compost Bin",
+	description = i18n('Compost Bin'),
 	tiles = {
 		"default_wood.png^compost_compost.png",
 		"default_wood.png",
