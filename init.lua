@@ -120,7 +120,7 @@ local function update_timer(pos)
 	if not timer:is_started() and count >= 8 then
 		timer:start(30)
 		meta:set_int('progress', 0)
-		meta:set_string('infotext', i18n('progress: 0%'))
+		meta:set_string('infotext', i18n('progress: @1%', '0'))
 		return
 	end
 	if timer:is_started() and count < 8 then

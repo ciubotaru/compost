@@ -1,5 +1,4 @@
 Compost Bin = Cutie de compost
 Empty Compost Bin = Cutie de compost goală
 To start composting, place some organic matter inside. = Pentru a începe compostarea, adaugă materie organică
-progress: 0% = progres: 0%
 progress: @1% = progres: @1%
