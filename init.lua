@@ -7,6 +7,38 @@
 minetest.log('action', 'MOD: Compost loading...')
 compost_version = '0.0.1'
 
+local i18n --internationalization
+	if minetest.get_modpath("intllib") then
+minetest.log('action', 'intllib loaded')
+		i18n = intllib.Getter()
+	else
+		i18n = function(s,a,...)
+		a={a,...}
+		local v = s:gsub("@(%d+)", function(n)
+			return a[tonumber(n)]
+			end)
+		return v
+	end
+end
+
+compost = {}
+compost.compostable_groups = {'flora', 'leaves', 'flower'}
+compost.compostable_nodes = {
+	'default:cactus',
+	'default:papyrus',
+	'default:dry_shrub',
+	'default:junglegrass',
+	'default:grass_1',
+	'default:dry_grass_1',
+	'farming:wheat',
+	'farming:straw',
+	'farming:cotton',
+}
+compost.compostable_items = {}
+for _, v in pairs(compost.compostable_nodes) do
+	compost.compostable_items[v] = true
+end
+
 local function formspec(pos)
 	local spos = pos.x..','..pos.y..','..pos.z
 	local formspec =
@@ -27,11 +59,15 @@ local function formspec(pos)
 end
 
 local function is_compostable(input)
-	if minetest.get_item_group(input, 'flora') > 0 or minetest.get_item_group(input, 'leaves') > 0 then
+	if compost.compostable_items[input] then
 		return true
-	else
-		return false
 	end
+	for _, v in pairs(compost.compostable_groups) do
+		if minetest.get_item_group(input, v) > 0 then
+			return true
+		end
+	end
+	return false
 end
 
 local function swap_node(pos, name)
@@ -48,7 +84,7 @@ local function count_input(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	local stacks = inv:get_list('src')
-	for k, v in pairs(stacks) do
+	for k in pairs(stacks) do
 		q = q + inv:get_stack('src', k):get_count()
 	end
 	return q
@@ -58,7 +94,7 @@ local function is_empty(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	local stacks = inv:get_list('src')
-	for k, v in pairs(stacks) do
+	for k in pairs(stacks) do
 		if not inv:get_stack('src', k):is_empty() then
 			return false
 		end
@@ -84,12 +120,12 @@ local function update_timer(pos)
 	if not timer:is_started() and count >= 8 then
 		timer:start(30)
 		meta:set_int('progress', 0)
-		meta:set_string('infotext', 'progress: 0%')
+		meta:set_string('infotext', i18n('progress: @1%', '0'))
 		return
 	end
 	if timer:is_started() and count < 8 then
 		timer:stop()
-		meta:set_string('infotext', 'Empty composting bin.\nTo get compost, add some organic matter.')
+		meta:set_string('infotext', i18n('To start composting, place some organic matter inside.'))
 		meta:set_int('progress', 0)
 	end
 end
@@ -99,7 +135,7 @@ local function create_compost(pos)
 	local meta = minetest.get_meta(pos)
 	local inv = meta:get_inventory()
 	local stacks = inv:get_list('src')
-	for k, v in pairs(stacks) do
+	for k in pairs(stacks) do
 		local stack = inv:get_stack('src', k)
 		if not stack:is_empty() then
 			local count = stack:get_count()
@@ -128,11 +164,11 @@ local function on_timer(pos)
 		meta:set_int('progress', progress)
 	end
 	if count_input(pos) >= 8 then
-		meta:set_string('infotext', 'progress: ' .. progress .. '%')
+		meta:set_string('infotext', i18n('progress: @1%', progress))
 		return true
 	else
 		timer:stop()
-		meta:set_string('infotext', 'Empty composting bin.\nTo get compost, add some organic matter.')
+		meta:set_string('infotext', i18n('To start composting, place some organic matter inside.'))
 		meta:set_int('progress', 0)
 		return false
 	end
@@ -143,7 +179,7 @@ local function on_construct(pos)
 	local inv = meta:get_inventory()
 	inv:set_size('src', 8)
 	inv:set_size('dst', 1)
-	meta:set_string('infotext','Empty composting bin.\nTo get compost, add some organic matter.')
+	meta:set_string('infotext', i18n('To start composting, place some organic matter inside.'))
 	meta:set_int('progress', 0)
 end
 
@@ -223,7 +259,7 @@ local function on_punch(pos, node, player, pointed_thing)
 end
 
 minetest.register_node("compost:wood_barrel_empty", {
-	description = "Empty Compost Bin",
+	description = i18n('Empty Compost Bin'),
 	tiles = {
 		"default_wood.png",
 	},
@@ -256,7 +292,7 @@ minetest.register_node("compost:wood_barrel_empty", {
 })
 
 minetest.register_node("compost:wood_barrel", {
-	description = "Compost Bin",
+	description = i18n('Compost Bin'),
 	tiles = {
 		"default_wood.png^compost_compost.png",
 		"default_wood.png",
