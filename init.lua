@@ -5,7 +5,7 @@
 --Modified Work Copyright (C) Vitalie Ciubotaru <vitalie at ciubotaru dot tk>
 
 minetest.log('action', 'MOD: Compost loading...')
-compost_version = '0.0.2'
+compost_version = '0.0.3'
 
 compost = {}
 

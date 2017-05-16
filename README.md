@@ -1,4 +1,4 @@
-Compost Mod v0.0.1
+Compost Mod v0.0.3
 ==================
 Compost bins turn organic matter like leaves, flowers, grass etc into soil. The
 bin is operated by punching or right-clicking.
@@ -40,6 +40,8 @@ looks full of dirt (node "compost:wood_barrel").
 Internationalization
 --------------------
 The mod is compatible with intllib. Currently available translations:
+* French
+* Portuguese
 * Romanian
 * Russian
 
