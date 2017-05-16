@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-07 06:47+0200\n"
+"PO-Revision-Date: 2017-05-07 06:48+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Language: ro\n"
+
+#: init.lua
+msgid "progress: @1%"
+msgstr "progres: @1%"
+
+#: init.lua
+msgid "To start composting, place some organic matter inside."
+msgstr "Pentru a începe compostarea, adaugă materie organică"
+
+#: init.lua
+msgid " moves stuff to compost bin at "
+msgstr ""
+
+#: init.lua
+msgid " takes stuff from compost bin at "
+msgstr ""
+
+#: init.lua
+msgid "Empty Compost Bin"
+msgstr "Cutie de compost goală"
+
+#: init.lua
+msgid "Compost Bin"
+msgstr "Cutie de compost"
+
+#: init.lua
+msgid " loaded."
+msgstr ""
