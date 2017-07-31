@@ -4,14 +4,14 @@
 --Original Work Copyright (C) 2016 cd2 (cdqwertz) <cdqwertz@gmail.com>
 --Modified Work Copyright (C) Vitalie Ciubotaru <vitalie at ciubotaru dot tk>
 
-minetest.log('action', 'MOD: Compost loading...')
-compost_version = '0.0.3'
-
-compost = {}
-
 -- Load support for intllib.
 local MP = minetest.get_modpath(minetest.get_current_modname())
 local S, NS = dofile(MP.."/intllib.lua")
+
+minetest.log('action', 'MOD: Compost ' .. S("loading..."))
+compost_version = '0.0.3'
+
+compost = {}
 compost.compostable_groups = {'flora', 'leaves', 'flower'}
 compost.compostable_nodes = {
 	'default:cactus',
@@ -215,7 +215,7 @@ end
 
 local function allow_metadata_inventory_move(pos, from_list, from_index, to_list, to_index, count, player)
 	local inv = minetest.get_meta(pos):get_inventory()
-	if from_list == to_list then 
+	if from_list == to_list then
 		return inv:get_stack(from_list, from_index):get_count()
 	else
 		return 0

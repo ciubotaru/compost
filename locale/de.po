@@ -7,15 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: compost (a Minetest mod)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-07 06:40+0200\n"
+"POT-Creation-Date: 2017-07-31 12:08+0200\n"
 "PO-Revision-Date: 2017-05-16 14:25+0900\n"
 "Last-Translator: Vitalie Ciubotaru <vitalie@ciubotaru.tk>\n"
 "Language-Team: \n"
+"Language: DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"Language: DE\n"
+
+#: init.lua
+msgid "loading..."
+msgstr ""
 
 #: init.lua
 msgid "progress: @1%"
