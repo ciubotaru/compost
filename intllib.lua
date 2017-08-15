@@ -28,7 +28,7 @@ if minetest.get_modpath("intllib") then
 		gettext, ngettext = intllib.make_gettext_pair()
 	else
 		-- Old method using text files.
-		gettext = intllib.Getter()
+		gettext, ngettext = intllib.Getter()
 	end
 end
 
